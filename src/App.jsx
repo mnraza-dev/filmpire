@@ -8,13 +8,16 @@ import {
   Navbar,
   MovieInformation,
 } from "./components";
+import { Content, StyledDiv, StyledMain, ToolBar } from "./components/styles";
+
 const App = () => {
   return (
-    <div>
+    <StyledDiv className="custom-root">
       <CssBaseline />
       <Navbar />
 
-      <main>
+      <Content>
+        <ToolBar />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Movies />} />
@@ -23,8 +26,8 @@ const App = () => {
             <Route path="/profile/:id" element={<Profile />} />
           </Routes>
         </BrowserRouter>
-      </main>
-    </div>
+      </Content>
+    </StyledDiv>
   );
 };
 
