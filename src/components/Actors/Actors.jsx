@@ -10,7 +10,7 @@ const Actors = () => {
       <Typography variant="h2" gutterBottom>
         Actor Details
       </Typography>
-      {/* Add actor details content here */}
+     
     </Box>
   );
 };
