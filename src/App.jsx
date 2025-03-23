@@ -8,11 +8,15 @@ import {
   Navbar,
   MovieInformation,
 } from "./components";
-import { Content, StyledDiv, StyledMain, ToolBar } from "./components/styles";
+import {
+  Content,
+  Root,
+  ToolBar,
+} from "./components/styles";
 
 const App = () => {
   return (
-    <StyledDiv className="custom-root">
+    <Root>
       <CssBaseline />
       <Navbar />
 
@@ -27,7 +31,7 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </Content>
-    </StyledDiv>
+    </Root>
   );
 };
 
