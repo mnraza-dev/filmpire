@@ -6,6 +6,9 @@ const ToolBar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
   marginLeft: "240px",
+  [theme.breakpoints.down("sm")]: {
+    marginLeft: 0,
+  },
 }));
 
 export { ToolBar };
