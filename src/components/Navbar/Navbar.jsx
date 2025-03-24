@@ -14,15 +14,19 @@ import { Link } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { ToolBar } from "./styles";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Brightness7, Brightness4 } from "@mui/icons-material";
+import {
+  Brightness7,
+  Brightness4,
+  AccountCircle,
+  Logout,
+} from "@mui/icons-material";
 import { useState } from "react";
-import { AccountCircle } from "@mui/icons-material";
-import { Logout } from "@mui/icons-material";
 
 const Navbar = ({ toggleColorMode }) => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const theme = useTheme();
+
   return (
     <>
       <AppBar position="fixed">
@@ -48,18 +52,30 @@ const Navbar = ({ toggleColorMode }) => {
                 Login &nbsp; <AccountCircle />
               </Button>
             ) : (
-              <Button color="inherit" component={Link} to={`/profile/:id`} className="text-gray-800 " onClick={() => {}}>
-                {/* Logout &nbsp; <Logout /> */}
-
-                {!isMobile && <>Movies &nbsp; </>}
-                <Avatar style={{
-                  width:30, height:30,
+              <Button
+                color="inherit"
+                component={Link}
+                to={`/profile/:id`}
+                sx={{
+                  "&:hover": {
+                    color: "primary.main",
+                  },
+                }}
+                onClick={() => {}}
+              >
+                {!isMobile && <>My Movies &nbsp;</>}
+                <Avatar
+                  sx={{
+                    width: 30,
+                    height: 30,
+                  }}
                   alt="Profile"
-                  src=""
-                }}/>
+                  src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+                />
               </Button>
             )}
           </div>
+          {isMobile && "Search.."}
         </ToolBar>
       </AppBar>
     </>
